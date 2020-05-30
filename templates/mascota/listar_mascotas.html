@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% if mascotas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>identificacion</th>
+                    <th>nombre</th>
+                    <th>Edad</th>
+                    <th>Genero</th>
+                    <th>Fecha Rescate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mascota in mascotas}
+                    <tr>
+                        <th>{{ mascota.folio }}</th>
+                        <th>{{ mascota.nombre }}</th>
+                        <th>{{ mascota.edad_aproximada }}</th>
+                        <th>{{ mascota.sexo }}</th>
+                        <th>{{ mascota.fecha_rescate }}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>No existen mascotas</h2>
+    {% endif %}
+</body>
+</html>
